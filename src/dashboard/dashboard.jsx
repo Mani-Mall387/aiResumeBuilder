@@ -5,6 +5,8 @@ import GlobalApi from './../../service/GlobalApi'
 import ResumeCardItem from './components/ResumeCardItem'
 
 const DashBoard = () => {
+
+
   const [resumeList,setResumeList]= useState([]);
   const {user}=useUser()
 
@@ -15,7 +17,7 @@ const DashBoard = () => {
   //used to get user resume list
   const GetResumeList=()=>{
     GlobalApi.GetUserResumes(user?.primaryEmailAddress?.emailAddress).then(res=>{
-      // console.log(res.data);
+      // console.log(res.data);  //remove the console
       setResumeList(res.data.data)  
     })
   }
