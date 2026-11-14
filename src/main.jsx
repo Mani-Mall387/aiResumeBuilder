@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignInPage from './auth/sign-in/sign-in'
 import Home from './home/home.jsx'
 import DashBoard from './dashboard/dashboard.jsx'
-import { ClerkProvider } from '@clerk/clerk-react'
+import { ClerkProvider } from "@clerk/react"
 import EditResume from './dashboard/resume/[resumeId]/resume'
 import ViewResume from './my-resume/[resumeID]/view'
 

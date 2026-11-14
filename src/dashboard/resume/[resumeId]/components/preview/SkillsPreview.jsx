@@ -1,42 +1,39 @@
 import React from 'react'
 
-const SkillsPreview = ({resumeInfo}) => {
+const SkillsPreview = ({ resumeInfo }) => {
   return (
     <div className="my-6">
-    <h2
-      className="text-center font-bold text-sm mb-2"
-      style={{
-        color: resumeInfo?.themeColor,
-      }}
-    >
-      Educational Experience
-    </h2>
+      <h2
+        className="text-center font-bold text-sm mb-2"
+        style={{ color: resumeInfo?.themeColor }}
+      >
+        Skills
+      </h2>
 
-    <hr style={{ borderColor: resumeInfo?.themeColor }} />
+      <hr style={{ borderColor: resumeInfo?.themeColor }} />
 
-    <div className='grid grid-cols-2 gap-3 my-4'>
-      {
-        resumeInfo?.skills.map((skill,index)=>(
-          <div key={index} className='flex items-center justify-between'>
-          <h2 className='text-xs'>{skill.name}</h2>
-          <div className='h-2 bg-gray-200 w-[120px]'>
-              <div className='h-2'
+      <div className="grid grid-cols-2 gap-5 my-4">
+        {resumeInfo?.skills?.map((skill, index) => {
+          // rating is 0-5; clamp so the bar can never overflow
+          const rating = Math.min(Math.max(Number(skill?.rating) || 0, 0), 5)
+
+          return (
+            <div key={index} className="flex items-center justify-between">
+              <h2 className="text-xs">{skill.name}</h2>
+              <div className="h-2 bg-gray-200 w-[120px] overflow-hidden mr-6">
+                <div
+                  className="h-2"
                   style={{
-                      backgroundColor:resumeInfo?.themeColor,
-                      width:`${skill?.rating * 20}%`
+                    backgroundColor: resumeInfo?.themeColor,
+                    width: `${rating * 20}%`,
                   }}
-              >
+                />
               </div>
-          </div>
+            </div>
+          )
+        })}
       </div>
-        ))
-      }
-
     </div>
-
-    </div>
-
-    
   )
 }
 

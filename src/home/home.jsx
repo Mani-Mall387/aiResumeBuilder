@@ -1,6 +1,6 @@
 // import Header from '@/components/custom/Header'
 import Header from "@/components/ui/custom/Header";
-import { UserButton } from "@clerk/clerk-react";
+import { UserButton } from "@clerk/react";
 import { AtomIcon, Edit, Share2 } from "lucide-react";
 import React from "react";
 

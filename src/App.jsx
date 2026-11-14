@@ -1,6 +1,6 @@
 import { Outlet , Navigate } from 'react-router-dom'
 import './App.css'
-import { useUser } from '@clerk/clerk-react'
+import { useUser } from "@clerk/react"
 import SignInPage from './auth/sign-in/sign-in'
 import Header from './components/ui/custom/Header';
 import { Toaster } from 'sonner';
@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <div>
+  
         <Header />
         <Outlet />
         <Toaster />

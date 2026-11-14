@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ... */
-@media print{
+/* @media print{
   #no-print{
     display: none;
   }
@@ -16,7 +16,38 @@ body{
   padding: 0;
   box-shadow: none;
 } 
+} */
+
+@media print {
+  #no-print {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* keep theme colour, header bar and skill bars */
+  #print-area,
+  #print-area * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* no card shadow on paper */
+  #print-area,
+  #print-area > * {
+    box-shadow: none !important;
+  }
 }
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+
 @page{
   size:auto;
   margin:0mm;

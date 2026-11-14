@@ -24,6 +24,9 @@
     "userName": {
       "type": "string"
     },
+    "themeColor": {
+      "type": "string"
+    },
     "firstName": {
       "type": "string"
     },

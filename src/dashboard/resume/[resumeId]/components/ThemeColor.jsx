@@ -37,6 +37,10 @@ function ThemeColor() {
             console.log(resp);
             toast('Theme Color Updated')
         })
+         .catch((error) => {
+            console.error('Theme save failed:', error.response?.status, error.response?.data)
+            toast.error('Could not save theme color')
+        })
     }
 
   return (
