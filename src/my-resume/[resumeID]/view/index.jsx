@@ -74,7 +74,7 @@ import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../service/GlobalApi'
 import { RWebShare } from 'react-web-share'
 import html2pdf from 'html2pdf.js'
-import { toast } from 'sonner'
+// import { toast } from 'sonner'
 
 
 const DEFAULT_THEME_COLOR = '#ff6666'
@@ -83,18 +83,18 @@ function ViewResume() {
   const [resumeInfo, setResumeInfo] = useState()
   const { resumeId } = useParams()
 
-  const buildPdfBlob = () => {
-  const element = document.getElementById('print-area')
-  return html2pdf()
-    .set({
-      margin: 0,
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-    })
-    .from(element)
-    .outputPdf('blob')
-}
+//   const buildPdfBlob = () => {
+//   const element = document.getElementById('print-area')
+//   return html2pdf()
+//     .set({
+//       margin: 0,
+//       image: { type: 'jpeg', quality: 0.98 },
+//       html2canvas: { scale: 2, useCORS: true },
+//       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+//     })
+//     .from(element)
+//     .outputPdf('blob')
+// }
 
     const HandleSharePdf = async () => {
     const blob = await buildPdfBlob()
